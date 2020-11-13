@@ -1,0 +1,26 @@
+$grid-breakpoints: (
+  xs: 0,
+  sm: 1024px,
+  md: 1280px,
+  lg: 1366px,
+  xl: 1660px
+) !default;
+$container-max-widths: (
+  xs: 0,
+  sm: 920px,
+  md: 1140px,
+  lg: 1220px,
+  xl: 1366px
+) !default;
+
+$grid-columns: 12 !default;
+$grid-gutter-width: 30px !default;
+
+@import 'breakpoints/mixins/breakpoints';
+@import 'grid/smo-grid';
+@import 'sizing/utilities/sizing';
+@import 'layout/utilities/position';
+@import 'layout/mixins/visibility';
+@import 'layout/utilities/visibility';
+
+

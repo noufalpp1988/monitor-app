@@ -1,0 +1,38 @@
+@if $enable-grid-classes {
+  .container {
+    @include make-container();
+    @include make-container-max-widths();
+    width: 1366px;
+    @media screen and(max-width: 1280px) {
+      width: 1272px;
+    }
+    max-width: 1366px;
+  }
+}
+
+@if $enable-grid-classes {
+  .container-fluid {
+    @include make-container();
+  }
+}
+
+@if $enable-grid-classes {
+  .row {
+    @include make-row();
+  }
+
+  .no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+
+    > .mtr-col,
+    > [class*='mtr-col-'] {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+}
+
+@if $enable-grid-classes {
+  @include make-grid-columns();
+}

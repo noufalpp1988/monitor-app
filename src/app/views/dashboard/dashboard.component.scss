@@ -1,0 +1,48 @@
+@import '../../../styles/grid/variables';
+@import '../../../styles/grid/functions';
+
+.dashboard-card{
+    background: $pickled-bluewood;
+    color: $white;
+    height: rem(400);
+    border: rem(1px) solid $regent-gray;
+}
+.card-header{
+    background: $fountain-blue;
+    width: 100%;
+    height: rem(25);
+}
+table, td {
+    border: 1px solid $black;
+    border-collapse: collapse;
+    background: $silver-chalice;
+    text-align: center;
+    color: $black;
+    font-weight: bold;
+  }
+  table, th{
+    border: 1px solid black;
+    border-collapse: collapse;
+    background: $mandys-pink;
+    text-align: center;
+    color: $black;
+  }
+  .width-55{
+      width: 55%;
+  }
+  .width-45{
+    width: 45%;
+}
+.width-100{
+    width: 100%;
+}
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .img-container {
+    position: relative;
+    text-align: center;
+  }

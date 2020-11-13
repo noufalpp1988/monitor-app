@@ -1,0 +1,100 @@
+<app-header (applyFilter)="applyFilter($event)"></app-header>
+<div class="row">
+    <div class="mtr-col-4 pl-0 pr-0 dashboard-card" *ngFor="let dashboardData of dashboardDataList | paginate : {
+        itemsPerPage: tableSize,
+        currentPage: page,
+        totalItems: count
+      };
+let i = index" [class.active]="i == currentIndex">
+        <div class="card-header align-center">
+            <label class="vertical-align-middle">
+                {{dashboardData.siteName}}
+            </label>
+        </div>
+        <div class="mtr-col-7 float-left pt-5">
+            <div class="row">
+                <div class="mtr-col-6 p-0 ">
+                    <div class="img-container float-left width-100">
+                        <img width="110" src="./assets/images/red-icon.svg" alt="" />
+                        <div class="centered">
+                            <label class="font-20">{{dashboardData.alarmsValue}}</label><br />
+                            <label class="font-12">{{dashboardData.alarmsLabel}}</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="mtr-col-6 p-0 ">
+                    <div class="img-container float-right width-100">
+                        <img width="110" src="./assets/images/yellow-icon.svg" alt="" />
+                        <div class="centered">
+                            <label class="font-20">{{dashboardData.unAckAlarmsValue}}</label><br />
+                            <label class="font-12">{{dashboardData.unAckAlarmsLabel}}</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="mtr-col-6 p-0 ">
+                    <div class="img-container float-left width-100">
+                        <img width="110" src="./assets/images/red-icon.svg" alt="" />
+                        <div class="centered">
+                            <label class="font-20">{{dashboardData.faultsValue}}</label><br />
+                            <label class="font-12">{{dashboardData.faultsLabel}}</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="mtr-col-6 p-0 ">
+                    <div class="img-container float-right width-100">
+                        <img width="110" src="./assets/images/yellow-icon.svg" alt="" />
+                        <div class="centered">
+                            <label class="font-20">{{dashboardData.unAckFaultsValue}}</label><br />
+                            <label class="font-12">{{dashboardData.unAckFaultsLabel}}</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img (click)="iconClick()" class="mt-5 ml-2 cursor-pt" width="30" src="./assets/images/folder-icon.svg"
+                alt="" />
+        </div>
+        <div class="mtr-col-5 float-right p-0">
+            <div>
+                <img  height="270" class="width-100" [src]="dashboardData.siteImageUrl !== '' ? convertImageData(dashboardData.siteImageUrl) : imagePath" alt="" />
+            </div>
+
+            <div>
+                <table  class="width-100 font-12">
+                    <tr>
+                        <th colspan="2">PRIORITY</th>
+                        <th>ALARMS</th>
+                        <th>FAULTS</th>
+                    </tr>
+                    <tr>
+                        <td rowspan="5" style="width:20px;"><img class="width-100" src="./assets/images/table-bg.svg"
+                                alt="" /></td>
+                    </tr>
+                    <tr *ngFor="let cellData of dashboardData.lstPriorityTableData">
+
+                        <td *ngIf="cellData.priority === '1'">P1</td>
+                        <td *ngIf="cellData.priority === '2'">P2</td>
+                        <td *ngIf="cellData.priority === '3'">P3</td>
+                        <td *ngIf="cellData.priority === '4'">P4</td>
+                        <td>{{cellData.alarms}}</td>
+                        <td>{{cellData.faults}}</td>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+<div class="d-flex justify-content-center">
+    <pagination-controls responsive="true" previousLabel="Prev" nextLabel="Next"
+        (pageChange)="onTableDataChange($event)">
+    </pagination-controls>
+</div>
+<ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" type="ball-spin-clockwise">
+    <p style="color: white">Loading</p>
+</ngx-spinner>

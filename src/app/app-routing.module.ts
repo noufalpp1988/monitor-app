@@ -3,9 +3,10 @@ import { Routes, RouterModule } from '@angular/router';
 import { NewsComponent } from './news/news.component';
 
 
-const routes: Routes = [{
-  path: 'news',
-  component: NewsComponent
+const routes: Routes = [{ path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+{
+  path: 'dashboard',
+  loadChildren: './views/dashboard/dashboard.module#DashboardModule'
 }];
 
 @NgModule({

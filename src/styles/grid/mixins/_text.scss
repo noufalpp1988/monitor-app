@@ -1,0 +1,80 @@
+@import './src/styles/grid/mixins/font';
+@import './src/styles/grid/functions';
+@import './src/styles/grid/variables';
+
+@mixin heading-1 {
+  @include roboto-body-copy();
+  font-size: rem(24);
+  line-height: rem(26);
+  color: $matterhorn;
+}
+@mixin heading-2 {
+  @include roboto-body-copy();
+  font-size: rem(18);
+  line-height: rem(28);
+  color: $matterhorn;
+}
+@mixin heading-3 {
+  @include roboto-body-copy();
+  font-size: rem(16);
+  line-height: rem(22);
+  color: $matterhorn;
+}
+@mixin table-header {
+  @include roboto-level1-tabs();
+  font-size: rem(12);
+  line-height: rem(18);
+  text-transform: uppercase;
+  color: $matterhorn;
+}
+@mixin body-default {
+  @include roboto-body-copy();
+  font-size: rem(14);
+  line-height: rem(20);
+  color: $matterhorn;
+}
+@mixin body-small {
+  @include roboto-body-copy();
+  font-size: rem(12);
+  line-height: rem(18);
+  color: $matterhorn;
+}
+@mixin body-tiny {
+  @include roboto-body-copy();
+  font-size: rem(10);
+  line-height: rem(15);
+  color: $matterhorn;
+}
+@mixin hyperlink {
+  @include roboto-body-copy();
+  font-size: rem(14);
+  line-height: rem(20);
+  cursor: pointer;
+  color: theme(text, froyo) !important;
+}
+@mixin hyperlink2 {
+  @include roboto-body-copy();
+  font-size: rem(12);
+  line-height: rem(18);
+  cursor: pointer;
+  color: $white !important;
+  background-color: theme(primary, cupcake) !important;
+  margin: 0;
+  border: none;
+  height: rem(35);
+  padding: rem(10) rem(10);
+  outline: 0 none;
+  outline-offset: rem(0);
+  display: inline-block;
+  position: relative;
+  text-decoration: none !important;
+  text-align: center;
+  zoom: 1;
+  overflow: visible;
+}
+@mixin cta-text {
+  @include roboto-body-copy();
+  font-size: rem(14);
+  line-height: rem(20);
+  color: $matterhorn;
+}

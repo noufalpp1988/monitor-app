@@ -1,3 +1,6 @@
 export const environment = {
-  production: true
+  production: true,
+  settings: {
+    urlui: 'http://hrworks.spdns.org'
+  }
 };

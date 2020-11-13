@@ -1,0 +1,17 @@
+@import '../../../styles/grid/variables';
+@import '../../../styles/grid/functions';
+.header{
+    height: rem(55px);
+    padding: rem(10px);
+    font-size: rem(12px);
+    background: $pomegranate;
+    .apply-btn{
+        background: $pickled-bluewood;
+    }
+  
+}
+.select-all{
+    margin: rem(5px) rem(17px);
+    color: $white;
+}
+

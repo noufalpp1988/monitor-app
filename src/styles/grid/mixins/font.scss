@@ -1,0 +1,146 @@
+@mixin open-heading1 {
+  font-family: $font-family-sans-bold;
+  font-size: $heading1-font-size;
+  line-height: em(22px);
+  color: $blue;
+}
+@mixin open-heading2 {
+  font-family: $font-family-sans-light;
+  font-size: $heading2-font-size;
+  line-height: em(10px);
+  color: $blue;
+}
+@mixin open-heading3 {
+  font-family: $font-family-sans-semi-bold;
+  font-size: $heading3-font-size;
+  line-height: em(17px);
+  color: $blue;
+  text-transform: uppercase;
+}
+@mixin open-table-heading3 {
+  font-family: $font-family-sans-semi-bold;
+  font-size: $heading3-font-size;
+  line-height: em(17px);
+  color: $gray-700;
+}
+@mixin open-body-copy {
+  font-family: $font-family-sans-regular;
+  font-size: $heading3-font-size;
+  line-height: em(16px);
+  color: $gray-700;
+}
+@mixin open-primary-cta {
+  font-family: $font-family-sans-semi-bold;
+  font-size: $heading3-font-size;
+  line-height: em(16px);
+  color: $white;
+}
+@mixin open-secondary-cta {
+  font-family: $font-family-sans-semi-bold;
+  font-size: $heading3-font-size;
+  line-height: em(16px);
+  color: $blue;
+}
+@mixin open-tertiary-cta {
+  font-family: $font-family-sans-semi-bold;
+  font-size: $heading3-font-size;
+  line-height: em(16px);
+  color: $blue;
+}
+@mixin open-level1-tabs {
+  font-family: $font-family-sans-light;
+  font-size: $level-tabs-font-size;
+  line-height: em(22px);
+  color: $blue;
+}
+@mixin open-level2-tabs {
+  font-family: $font-family-sans-semi-bold;
+  font-size: $level-tabs-font-size;
+  line-height: em(22px);
+  color: $gray-700;
+}
+
+@mixin open-generic-border {
+  border-radius: em(10px);
+  border: solid 1px $blue;
+}
+
+@mixin open-secondary-label {
+  font-family: $font-family-sans-semi-bold;
+  font-size: $heading3-font-size;
+  line-height: em(16px);
+}
+
+@mixin open-breadcumb {
+  font-family: $font-family-sans-regular;
+  font-size: $heading3-font-size;
+  line-height: em(16px);
+  color: $bread-grey;
+}
+@mixin roboto-heading1 {
+  font-family: $font-family-roboto-bold;
+  font-size: $heading1-font-size;
+  line-height: em(22px);
+  color: $blue;
+}
+@mixin roboto-heading2 {
+  font-family: $font-family-roboto-light;
+  font-size: $heading2-font-size;
+  line-height: em(10px);
+  color: $blue;
+}
+@mixin roboto-heading3 {
+  font-family: $font-family-roboto-semi-bold;
+  font-size: $heading3-font-size;
+  line-height: em(17px);
+  color: $blue;
+  text-transform: uppercase;
+}
+@mixin roboto-table-heading3 {
+  font-family: $font-family-roboto-semi-bold;
+  font-size: $heading3-font-size;
+  line-height: em(17px);
+  color: $gray-700;
+}
+@mixin roboto-body-copy {
+  font-family: $font-family-roboto-regular;
+  font-size: $heading3-font-size;
+  line-height: em(16px);
+  color: $gray-700;
+}
+@mixin roboto-primary-cta {
+  font-family: $font-family-roboto-semi-bold;
+  font-size: $heading3-font-size;
+  line-height: em(16px);
+  color: $white;
+}
+@mixin roboto-secondary-cta {
+  font-family: $font-family-roboto-semi-bold;
+  font-size: $heading3-font-size;
+  line-height: em(16px);
+  color: $blue;
+}
+@mixin roboto-tertiary-cta {
+  font-family: $font-family-roboto-semi-bold;
+  font-size: $heading3-font-size;
+  line-height: em(16px);
+  color: $blue;
+}
+@mixin roboto-level1-tabs {
+  font-family: $font-family-roboto-light;
+  font-size: $level-tabs-font-size;
+  line-height: em(22px);
+  color: $blue;
+}
+@mixin roboto-level2-tabs {
+  font-family: $font-family-roboto-semi-bold;
+  font-size: $level-tabs-font-size;
+  line-height: em(22px);
+  color: $gray-700;
+}
+@mixin open-heading4 {
+  font-family: $font-family-sans-cond-bold;
+  font-size: $heading1-font-size;
+  line-height: em(22px);
+  color: $blue;
+}

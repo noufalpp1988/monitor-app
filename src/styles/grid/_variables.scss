@@ -1,0 +1,40 @@
+@import './functions';
+
+$fountain-blue: #4DC1BB;
+$pomegranate: #EF3E35;
+$pickled-bluewood: #2D414B;
+$white: #FFFFFF;
+$black: #000;
+$silver-chalice: #B2B2B2;
+$mandys-pink: #EDB4A0;
+$regent-gray: #7C8C98;
+$enable-grid-classes: true !default;
+$displays: none, inline, inline-block, block, table, table-row, table-cell, flex,
+  inline-flex !default;
+$positions: static, relative, absolute, fixed, sticky !default;
+$zindex-fixed: 1030 !default;
+$zindex-sticky: 1020 !default;  
+  $spacer: 1rem;
+  $spacers: (
+  0: 0,
+  1: (
+    $spacer * 0.25
+  ),
+  2: (
+    $spacer * 0.5
+  ),
+  3: $spacer,
+  4: (
+    $spacer * 1.5
+  ),
+  5: (
+    $spacer * 3
+  )
+);
+$sizes: (
+  25: 25%,
+  50: 50%,
+  75: 75%,
+  100: 100%
+);
+

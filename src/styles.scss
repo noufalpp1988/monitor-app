@@ -1,1 +1,52 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/pink-bluegrey.css';
+@import './styles/style.scss';
+body{
+    margin: 0;
+}
+@media (min-width: 1280px) {
+    // .row{
+    //     display: flex;
+    //     flex-wrap: wrap;
+    // }
+    .col-1{
+        width: 8.33%;
+    }
+    .col-2{
+        width: 10%;
+    }  
+    .col-3{
+        width: 33.33%;
+    }
+    .col-12{
+        width: 100%;
+    }
+  
+  }
+.float-left{
+    float: left;
+}
+.float-right{
+    float:right;
+}
+.pr-10{
+    padding-right: 10px;
+}
+.pr-20{
+    padding-right: 20px;
+}
+.align-center{
+    text-align: center;
+}
+.vertical-align-middle{
+    vertical-align: middle;
+}
+.cursor-pt{
+    cursor: pointer;
+}
+.font-12{
+    font-size: rem(12);
+
+}
+.font-20{
+    font-size: rem(20);
+}
