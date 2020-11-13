@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/api.service';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { DomSanitizer } from '@angular/platform-browser';
 export interface PeriodicElement {
   priority: string;
   alarms: string;
@@ -21,7 +22,8 @@ export class DashboardComponent implements OnInit {
   L2val: any;
   image: any;
   imagePath = './assets/images/placeholder_building.png';
-  constructor(public apiService: ApiService, private spinnerService: NgxSpinnerService) { }
+  constructor(public apiService: ApiService, private spinnerService: NgxSpinnerService,
+    private domSanitizer: DomSanitizer) { }
 
   ngOnInit() {
     this.spinnerService.show();
@@ -59,11 +61,9 @@ export class DashboardComponent implements OnInit {
     this.L2val = requestObject;
     this.fetchDashboardData(event.L1val, requestObject);
   }
-  convertImageData(data: any): void {
-    const reader = new FileReader();
-    reader.onload = (e) => this.image = e.target.result;
-    reader.readAsDataURL(new Blob([data]));
-    return this.image;
+  convertImageData(data: any): any {
+    const objectURL = 'data:image/jpeg;base64,' + btoa(data);
+    return objectURL;
   }
 
 }
