@@ -62,8 +62,13 @@ export class DashboardComponent implements OnInit {
     this.fetchDashboardData(event.L1val, requestObject);
   }
   convertImageData(data: any): any {
-    const objectURL = 'data:image/jpeg;base64,' + btoa(data);
-    return objectURL;
+    const objectURL = 'data:image/jpeg;,' + data;
+    return this.domSanitizer.bypassSecurityTrustUrl(objectURL);
+    // return this.domSanitizer.bypassSecurityTrustUrl(objectURL);
+    // const reader = new FileReader();
+    // reader.onload = (e) => this.image = e.target.result;
+    // reader.readAsDataURL(new Blob([data]));
+    // return this.domSanitizer.bypassSecurityTrustUrl(this.image);
   }
 
 }
