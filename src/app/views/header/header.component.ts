@@ -16,15 +16,17 @@ export class HeaderComponent implements OnInit {
   isDdDisabled = true;
   priorityList = [];
   selectedPriority;
+  previousLVal: any = [];
   @ViewChild('select1', { static: false }) select1: MatSelect;
   @ViewChild('select2', { static: false }) select2: MatSelect;
   @Output() applyFilter: any = new EventEmitter();
   allSelected = true;
+  showAppyBtn = false;
   constructor(public apiService: ApiService) { }
 
   ngOnInit(): void {
     this.buildings.setValue('ALL');
-    this.priorityList = [{label: 'ALL'}];
+    this.priorityList = [{ label: 'ALL' }];
     this.priority.setValue(this.priorityList);
     this.apiService.getSiteDdlData().subscribe((response: any) => {
       this.getSiteDdlData = response;
@@ -37,7 +39,7 @@ export class HeaderComponent implements OnInit {
   selectionChange(event: any): void {
     this.priorityList = [];
     if (event.value === 'ALL') {
-      this.priorityList = [{label: 'ALL'}];
+      this.priorityList = [{ label: 'ALL' }];
       this.priority.setValue(this.priorityList);
     } else {
       const siteObject = this.getSiteDdlData.find(data => data.type === event.value);
@@ -49,6 +51,20 @@ export class HeaderComponent implements OnInit {
         this.allSelected = true;
       }
     }
+    const compareObj = { buildings: this.selectedBuildings, sites: this.priority.value };
+    if (JSON.stringify(this.previousLVal).toLowerCase() === JSON.stringify(compareObj).toLowerCase()) {
+      this.showAppyBtn = false;
+    } else {
+      this.showAppyBtn = true;
+    }
+  }
+  selectionChangeL2(event: any): void {
+    const compareObj = { buildings: this.selectedBuildings, sites: this.priority.value };
+    if (JSON.stringify(this.previousLVal).toLowerCase() === JSON.stringify(compareObj).toLowerCase()) {
+      this.showAppyBtn = false;
+    } else {
+      this.showAppyBtn = true;
+    }
   }
   toggleAllSelection() {
     if (this.allSelected) {
@@ -58,6 +74,9 @@ export class HeaderComponent implements OnInit {
     }
   }
   filterClick(): void {
-    this.applyFilter.emit({L1val: this.selectedBuildings, L2val: this.priority.value});
+    this.showAppyBtn = false;
+    const objValue = { buildings: this.selectedBuildings, sites: this.priority.value };
+    this.previousLVal = objValue;
+    this.applyFilter.emit({ L1val: this.selectedBuildings, L2val: this.priority.value });
   }
 }

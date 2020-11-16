@@ -11,7 +11,7 @@
     <div class="mtr-col-2">
         <mat-form-field>
             <mat-select #select2 placeholder="Sites" [formControl]="priority" [(value)]="selectedPriority" [disabled]="buildings.value === 'ALL'"
-                multiple>
+                multiple (selectionChange)="selectionChangeL2($event)">
                     <ng-container *ngIf="buildings.value === 'ALL'">
                         <mat-option *ngFor="let priority of priorityList" class="filter-option" [value]="priority" >
                             {{priority.label}} </mat-option>
@@ -29,7 +29,7 @@
         </mat-form-field>
 
     </div>
-    <div class="mtr-col-2">
+    <div class="mtr-col-2" *ngIf="showAppyBtn">
         <button mat-raised-button color="primary" class="apply-btn" (click)="filterClick()">Apply</button>
     </div>
 </div>
