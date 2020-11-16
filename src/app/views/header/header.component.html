@@ -1,28 +1,35 @@
 <div class="row header">
-        <div class="mtr-col-2">
-            <mat-form-field>
-                <mat-select #select1 placeholder="Building" [formControl]="buildings" [(value)]="selectedBuildings" (selectionChange)="selectionChange($event)">
-                    <mat-option *ngFor="let building of buildingList" [value]="building">{{building}}</mat-option>
-                  </mat-select>
-            </mat-form-field>
-          
-        </div>
-        <div class="mtr-col-2">
-            <mat-form-field>
-                <mat-select #select2 placeholder="Sites" [formControl]="priority" [(value)]="selectedPriority" [disabled]="buildings.value === 'ALL'" multiple>
+    <div class="mtr-col-2">
+        <mat-form-field>
+            <mat-select #select1 placeholder="Building" [formControl]="buildings" [(value)]="selectedBuildings"
+                (selectionChange)="selectionChange($event)">
+                <mat-option *ngFor="let building of buildingList" [value]="building">{{building}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+    </div>
+    <div class="mtr-col-2">
+        <mat-form-field>
+            <mat-select #select2 placeholder="Sites" [formControl]="priority" [(value)]="selectedPriority" [disabled]="buildings.value === 'ALL'"
+                multiple>
+                    <ng-container *ngIf="buildings.value === 'ALL'">
+                        <mat-option *ngFor="let priority of priorityList" class="filter-option" [value]="priority" >
+                            {{priority.label}} </mat-option>
+                    </ng-container>
+               
+                <ng-container *ngIf="buildings.value !== 'ALL'">
                     <div class="select-all">
-                        <mat-checkbox [(ngModel)]="allSelected"
-                                        [ngModelOptions]="{standalone: true}"
-                                        (change)="toggleAllSelection()">ALL</mat-checkbox>
+                        <mat-checkbox [(ngModel)]="allSelected" [ngModelOptions]="{standalone: true}"
+                            (change)="toggleAllSelection()">ALL</mat-checkbox>
                     </div>
                     <mat-option *ngFor="let priority of priorityList" [value]="priority">{{priority.label}}</mat-option>
-                  </mat-select>
-            </mat-form-field>
-            
-        </div>
-        <div class="mtr-col-2">
-            <button mat-raised-button color="primary" class="apply-btn" (click)="filterClick()">Apply</button>
-        </div>
+                </ng-container>
+
+            </mat-select>
+        </mat-form-field>
+
+    </div>
+    <div class="mtr-col-2">
+        <button mat-raised-button color="primary" class="apply-btn" (click)="filterClick()">Apply</button>
+    </div>
 </div>
-
-

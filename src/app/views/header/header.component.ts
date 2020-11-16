@@ -24,6 +24,8 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.buildings.setValue('ALL');
+    this.priorityList = [{label: 'ALL'}];
+    this.priority.setValue(this.priorityList);
     this.apiService.getSiteDdlData().subscribe((response: any) => {
       this.getSiteDdlData = response;
       for (const value of this.getSiteDdlData) {
@@ -34,13 +36,18 @@ export class HeaderComponent implements OnInit {
   }
   selectionChange(event: any): void {
     this.priorityList = [];
-    const siteObject = this.getSiteDdlData.find(data => data.type === event.value);
-    if (siteObject) {
-      for (const value of siteObject.lstSites) {
-        this.priorityList.push(value);
-      }
+    if (event.value === 'ALL') {
+      this.priorityList = [{label: 'ALL'}];
       this.priority.setValue(this.priorityList);
-      this.allSelected = true;
+    } else {
+      const siteObject = this.getSiteDdlData.find(data => data.type === event.value);
+      if (siteObject) {
+        for (const value of siteObject.lstSites) {
+          this.priorityList.push(value);
+        }
+        this.priority.setValue(this.priorityList);
+        this.allSelected = true;
+      }
     }
   }
   toggleAllSelection() {

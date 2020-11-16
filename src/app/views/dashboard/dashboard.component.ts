@@ -27,7 +27,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     this.spinnerService.show();
-    this.apiService.getDashboardData('All', {}).subscribe((response: any) => {
+    this.apiService.getDashboardData('All', []).subscribe((response: any) => {
       this.dashboardDataList = response;
       this.spinnerService.hide();
     });
@@ -39,9 +39,9 @@ export class DashboardComponent implements OnInit {
   fetchDashboardData(L1val: any, L2val: any): void {
     this.spinnerService.show();
     if (L2val === undefined || L2val === null) {
-      L2val = {};
+      L2val = [];
     }
-    L2val = L1val === 'ALL' ? {} : L2val;
+    L2val = L1val === 'ALL' ? [] : L2val;
     L1val = L1val === undefined || L1val === null ? 'ALL' : L1val;
     this.apiService.getDashboardData(L1val, L2val).subscribe((response: any) => {
       this.dashboardDataList = response;
@@ -64,11 +64,6 @@ export class DashboardComponent implements OnInit {
   convertImageData(data: any): any {
     const objectURL = 'data:image/jpeg;,' + data;
     return this.domSanitizer.bypassSecurityTrustUrl(objectURL);
-    // return this.domSanitizer.bypassSecurityTrustUrl(objectURL);
-    // const reader = new FileReader();
-    // reader.onload = (e) => this.image = e.target.result;
-    // reader.readAsDataURL(new Blob([data]));
-    // return this.domSanitizer.bypassSecurityTrustUrl(this.image);
   }
 
 }
