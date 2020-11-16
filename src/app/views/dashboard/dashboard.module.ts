@@ -4,7 +4,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DashboardComponent } from './dashboard.component';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { HeaderComponent } from '../header/header.component';
-import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import {MatSelectModule,
 MatButtonModule,
 MatTableModule,
@@ -23,8 +22,7 @@ import { NgxSpinnerModule, NgxSpinnerService } from 'ngx-spinner';
     MatTableModule,
     MatCheckboxModule,
     NgxPaginationModule,
-    NgxSpinnerModule,
-    NgMultiSelectDropDownModule.forRoot()
+    NgxSpinnerModule
   ],
   providers: [NgxSpinnerService]
 })

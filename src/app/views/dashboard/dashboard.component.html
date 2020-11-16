@@ -58,11 +58,12 @@ let i = index" [class.active]="i == currentIndex">
         </div>
         <div class="mtr-col-5 float-right p-0">
             <div>
-                <img  height="270" class="width-100" [src]="dashboardData.siteImageUrl !== '' ? convertImageData(dashboardData.siteImageUrl) : imagePath" alt="" />
+                <img height="270" class="width-100"
+                    [src]="dashboardData.siteImageUrl !== '' ?  dashboardData.siteImageUrl : imagePath" alt="" />
             </div>
 
             <div>
-                <table  class="width-100 font-12">
+                <table class="width-100 font-12">
                     <tr>
                         <th colspan="2">PRIORITY</th>
                         <th>ALARMS</th>
