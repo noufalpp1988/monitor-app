@@ -1,16 +1,16 @@
-<div class="row header">
-    <div class="mtr-col-2">
+<div class="row header pt-0 pb-0">
+    <div class="mtr-col-2 pr-0">
         <mat-form-field>
-            <mat-select #select1 placeholder="Building" [formControl]="buildings" [(value)]="selectedBuildings"
+            <mat-select #select1 [formControl]="buildings" [(value)]="selectedBuildings"
                 (selectionChange)="selectionChange($event)">
                 <mat-option *ngFor="let building of buildingList" [value]="building">{{building}}</mat-option>
             </mat-select>
         </mat-form-field>
 
     </div>
-    <div class="mtr-col-2">
+    <div class="mtr-col-2 pl-0">
         <mat-form-field>
-            <mat-select #select2 placeholder="Sites" [formControl]="priority" [(value)]="selectedPriority" [disabled]="buildings.value === 'ALL'"
+            <mat-select #select2  [formControl]="priority" [(value)]="selectedPriority" [disabled]="buildings.value === 'ALL'"
                 multiple (selectionChange)="selectionChangeL2($event)">
                     <ng-container *ngIf="buildings.value === 'ALL'">
                         <mat-option *ngFor="let priority of priorityList" class="filter-option" [value]="priority" >
@@ -30,6 +30,6 @@
 
     </div>
     <div class="mtr-col-2" *ngIf="showAppyBtn">
-        <button mat-raised-button color="primary" class="apply-btn" (click)="filterClick()">Apply</button>
+        <button mat-raised-button color="primary" class="apply-btn mt-2" (click)="filterClick()">Apply</button>
     </div>
 </div>

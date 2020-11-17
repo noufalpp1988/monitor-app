@@ -11,41 +11,42 @@ let i = index" [class.active]="i == currentIndex">
                 {{dashboardData.siteName}}
             </label>
         </div>
-        <div class="mtr-col-7 float-left pt-5">
+        <div class="mtr-col-7 float-left pt-4">
             <div class="row">
                 <div class="mtr-col-6 p-0 ">
                     <div class="img-container float-left width-100">
-                        <img width="110" src="./assets/images/red-icon.svg" alt="" />
+                        <img width="120" src="./assets/images/red-icon.svg" alt="" />
                         <div class="centered">
                             <label class="font-20">{{dashboardData.alarmsValue}}</label><br />
                             <label class="font-12">{{dashboardData.alarmsLabel}}</label>
                         </div>
                     </div>
                 </div>
-                <div class="mtr-col-6 p-0 ">
-                    <div class="img-container float-right width-100">
-                        <img width="110" src="./assets/images/yellow-icon.svg" alt="" />
-                        <div class="centered">
-                            <label class="font-20">{{dashboardData.unAckAlarmsValue}}</label><br />
-                            <label class="font-12">{{dashboardData.unAckAlarmsLabel}}</label>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <div class="row">
                 <div class="mtr-col-6 p-0 ">
                     <div class="img-container float-left width-100">
-                        <img width="110" src="./assets/images/red-icon.svg" alt="" />
+                        <img width="120" src="./assets/images/yellow-icon.svg" alt="" />
                         <div class="centered">
                             <label class="font-20">{{dashboardData.faultsValue}}</label><br />
                             <label class="font-12">{{dashboardData.faultsLabel}}</label>
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <div class="row pt-2">
                 <div class="mtr-col-6 p-0 ">
                     <div class="img-container float-right width-100">
-                        <img width="110" src="./assets/images/yellow-icon.svg" alt="" />
+                        <img width="120" src="./assets/images/red-icon.svg" alt="" />
+                        <div class="centered">
+                            <label class="font-20">{{dashboardData.unAckAlarmsValue}}</label><br />
+                            <label class="font-12">{{dashboardData.unAckAlarmsLabel}}</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="mtr-col-6 p-0 ">
+                    <div class="img-container float-right width-100">
+                        <img width="120" src="./assets/images/yellow-icon.svg" alt="" />
                         <div class="centered">
                             <label class="font-20">{{dashboardData.unAckFaultsValue}}</label><br />
                             <label class="font-12">{{dashboardData.unAckFaultsLabel}}</label>

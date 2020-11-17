@@ -35,6 +35,8 @@ export class HeaderComponent implements OnInit {
       }
       this.buildingList.unshift('ALL');
     });
+    const objValue = { buildings: 'ALL', sites: this.priority.value };
+    this.previousLVal = objValue;
   }
   selectionChange(event: any): void {
     this.priorityList = [];
