@@ -31,7 +31,7 @@ export class HeaderComponent implements OnInit {
     this.apiService.getSiteDdlData().subscribe((response: any) => {
       this.getSiteDdlData = response;
       for (const value of this.getSiteDdlData) {
-        this.buildingList.push(value.type);
+        this.buildingList.push(value.type.toUpperCase());
       }
       this.buildingList.unshift('ALL');
     });
@@ -44,9 +44,10 @@ export class HeaderComponent implements OnInit {
       this.priorityList = [{ label: 'ALL' }];
       this.priority.setValue(this.priorityList);
     } else {
-      const siteObject = this.getSiteDdlData.find(data => data.type === event.value);
+      const siteObject = this.getSiteDdlData.find(data => data.type.toUpperCase() === event.value);
       if (siteObject) {
         for (const value of siteObject.lstSites) {
+          value.label = value.label.toUpperCase();
           this.priorityList.push(value);
         }
         this.priority.setValue(this.priorityList);
